@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Secrets — never commit
+.env
+*.json
+
+# Runtime output
+logs/
+audio_cache/

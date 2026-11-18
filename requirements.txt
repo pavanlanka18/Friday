@@ -1,0 +1,10 @@
+# Phase 0–1 only; later steps add their own dependencies.
+pydantic-settings
+httpx
+openai
+
+# Dev / tests
+pytest
+pytest-asyncio
+respx
+ruff

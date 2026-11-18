@@ -182,7 +182,7 @@ Legend: `[ ]` todo · `[x]` done · **Check** = how to prove the step works · `
 
 ### Phase 0 — Project setup
 
-- [ ] **0.1 Repo skeleton.** Create the folders above (empty `__init__.py` files), `.gitignore`
+- [x] **0.1 Repo skeleton.** Create the folders above (empty `__init__.py` files), `.gitignore`
   (`.venv`, `.env`, `__pycache__`, `*.json` credentials, `audio_cache/`), `requirements.txt`,
   `README.md` with setup steps.
   **Check:** `python -c "import friday"` works.
@@ -381,4 +381,5 @@ Legend: `[ ]` todo · `[x]` done · **Check** = how to prove the step works · `
 
 | Date | Step | What was done | Notes / problems |
 |---|---|---|---|
-| | | | |
+| 2026-11-18 | models | Tested on RTX 3050 6 GB via Ollama 0.40.16 (`think:false`, `num_ctx` 8192). Chosen: chat `qwen3.5:4b` (100% GPU, ~48 tok/s, tool calls 4/4 + tool-result round-trip OK), embed `nomic-embed-text` (768-dim). | Rejected `qwen3.5:9b` (6.6 GB, 45% on CPU, ~11 tok/s) and `qwen3:4b` (ignores `think:false`, leaks reasoning ending in `</think>`). First 9b load hit a one-off CUDA crash; retry worked. |
+| 2026-11-18 | 0.1 | Package folders with empty `__init__.py`, `.gitkeep` in `migrations/ scripts/ tests/`, `.gitignore`, `requirements.txt` (Phase 0–1 deps only, unpinned), README setup steps. `.venv` on Python 3.13.15. | `import friday` OK. No older scaffold existed. `.gitignore` ignores all `*.json` as the plan says — add a `!path` exception if a real JSON file must be tracked later. |
